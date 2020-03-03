@@ -15,22 +15,21 @@ using System.Windows.Shapes;
 namespace working_time_monitoring_management
 {
     /// <summary>
-    /// Interaction logic for Window2.xaml
+    /// Interaction logic for Window3.xaml
     /// </summary>
-    public partial class Window2 : Window
+    public partial class Window3 : Window
     {
-        public Window2()
+        public Window3()
         {
             InitializeComponent();
         }
 
-        private void change_card_number(object sender, RoutedEventArgs e)
+        private void employee_info_show(object sender, RoutedEventArgs e)
         {
-            string name = name_box_change.Text;
-            string surname = surname_box_change.Text;
-            int new_card_numberr = int.Parse(card_number_box_change.Text);
-            UpdateDatabase.change_card_number(name, surname, new_card_numberr);
-            MessageBox.Show("Numer karty został zmieniony");
+            int card_number = int.Parse(card_number_info.Text);
+            ShowEmployee.show(card_number);
+            name_info.Content = ShowEmployee.name_;
+            surname_info.Content = ShowEmployee.surname_;
         }
     }
 }

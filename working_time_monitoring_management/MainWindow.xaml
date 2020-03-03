@@ -5,11 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:working_time_monitoring_management"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="370.732">
     <Grid>
-        <Button Content="DODAJ PRACOWNIKA" HorizontalAlignment="Left" Margin="28,134,0,0" VerticalAlignment="Top" Width="153" Click="add_employee"/>
-        <Label Content="SYSTEM ZARZĄDZANIA CZASEM PRACY PRACOWNIKÓW" HorizontalAlignment="Left" Margin="222,25,0,0" VerticalAlignment="Top"/>
-        <Button Content="ZMIEŃ NUMER KARTY" HorizontalAlignment="Left" Margin="28,178,0,0" VerticalAlignment="Top" Width="153" RenderTransformOrigin="0.226,0.543" Click="edit_card_number"/>
+        <Button Content="DODAJ PRACOWNIKA" HorizontalAlignment="Left" Margin="79,119,0,0" VerticalAlignment="Top" Width="182" Click="add_employee"/>
+        <Label Content="SYSTEM ZARZĄDZANIA CZASEM PRACY PRACOWNIKÓW" HorizontalAlignment="Left" Margin="28,24,0,0" VerticalAlignment="Top"/>
+        <Button Content="ZMIEŃ NUMER KARTY" HorizontalAlignment="Left" Margin="79,161,0,0" VerticalAlignment="Top" Width="182" RenderTransformOrigin="0.226,0.543" Click="edit_card_number"/>
+        <Button Content="INFORMACJE O PRACOWNIKU" HorizontalAlignment="Left" Margin="79,201,0,0" VerticalAlignment="Top" Width="182" Click="employee_info"/>
+        <Button Content="WYŚWIETL LISTĘ PRACOWNIKÓW" HorizontalAlignment="Left" Margin="79,242,0,0" VerticalAlignment="Top" Width="182" Click="show_all_employee"/>
 
     </Grid>
 </Window>

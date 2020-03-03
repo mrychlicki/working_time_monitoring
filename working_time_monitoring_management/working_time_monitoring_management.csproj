@@ -92,6 +92,12 @@
     <Compile Include="Edit_card_number.xaml.cs">
       <DependentUpon>Edit_card_number.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Employee_info.xaml.cs">
+      <DependentUpon>Employee_info.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LIist_all_employee.xaml.cs">
+      <DependentUpon>LIist_all_employee.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WTMM_Class.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -102,6 +108,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Edit_card_number.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Employee_info.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LIist_all_employee.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
