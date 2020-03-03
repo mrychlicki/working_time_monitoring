@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Button Content="DODAJ PRACOWNIKA" HorizontalAlignment="Left" Margin="28,134,0,0" VerticalAlignment="Top" Width="153" Click="add_employee"/>
+        <Label Content="SYSTEM ZARZĄDZANIA CZASEM PRACY PRACOWNIKÓW" HorizontalAlignment="Left" Margin="222,25,0,0" VerticalAlignment="Top"/>
+        <Button Content="ZMIEŃ NUMER KARTY" HorizontalAlignment="Left" Margin="28,178,0,0" VerticalAlignment="Top" Width="153" RenderTransformOrigin="0.226,0.543" Click="edit_card_number"/>
+
     </Grid>
 </Window>

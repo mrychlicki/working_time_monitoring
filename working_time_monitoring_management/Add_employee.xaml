@@ -1,0 +1,19 @@
+﻿<Window x:Class="working_time_monitoring_management.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:working_time_monitoring_management"
+        mc:Ignorable="d"
+        Title="DODAJ PRACOWNIKA" Height="450" Width="800">
+    <Grid>
+        <Button Content="Dodaj" HorizontalAlignment="Left" Margin="617,345,0,0" VerticalAlignment="Top" Width="75" Click="add_new_employee"/>
+        <Label Content="IMIĘ" HorizontalAlignment="Left" Margin="63,64,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="224,64,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="246" Name="name_box"/>
+        <Label Content="NAZWISKO" HorizontalAlignment="Left" Margin="63,125,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="224,129,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="246" Name="surname_box"/>
+        <Label Content="NUMER KARTY RFID" HorizontalAlignment="Left" Margin="63,202,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="224,206,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="246" Name="card_number_box"/>
+
+    </Grid>
+</Window>

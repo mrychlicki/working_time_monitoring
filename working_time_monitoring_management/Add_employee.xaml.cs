@@ -10,31 +10,27 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace working_time_monitoring_management
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Window1 : Window
     {
-        public MainWindow()
+        public Window1()
         {
             InitializeComponent();
         }
 
-        private void add_employee(object sender, RoutedEventArgs e)
+        private void add_new_employee(object sender, RoutedEventArgs e)
         {
-            Window1 add_employee = new Window1();
-            add_employee.Show();
-        }
-
-        private void edit_card_number(object sender, RoutedEventArgs e)
-        {
-            Window2 change_card_number = new Window2();
-            change_card_number.Show();
+            string name = name_box.Text;
+            string surname = surname_box.Text;
+            int card_number = int.Parse(card_number_box.Text);
+            AddToDatabase.add(name, surname, card_number);
+            MessageBox.Show("Dodano Pracownika");
         }
     }
 }
