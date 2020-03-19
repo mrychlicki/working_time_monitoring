@@ -1,0 +1,19 @@
+﻿<Window x:Class="working_time_monitoring_management.Window5"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:working_time_monitoring_management"
+        mc:Ignorable="d"
+        Title="CZAS PRACY" Height="464.634" Width="390.244">
+    <Grid>
+        <Label Content="IMIĘ" HorizontalAlignment="Left" Margin="42,33,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="162,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="wt_name"/>
+        <Label Content="NAZWISKO" HorizontalAlignment="Left" Margin="42,80,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="162,83,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="wt_surname"/>
+        <Label Content="CZAS PRACY" HorizontalAlignment="Left" Margin="42,132,0,0" VerticalAlignment="Top"/>
+        <Label Content="" HorizontalAlignment="Left" Margin="162,132,0,0" VerticalAlignment="Top" Name="working_time_text"/>
+        <Button Content="POKAŻ" HorizontalAlignment="Left" Margin="143,211,0,0" VerticalAlignment="Top" Width="75" Click="wt_show"/>
+
+    </Grid>
+</Window>

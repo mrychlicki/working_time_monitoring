@@ -81,7 +81,7 @@ namespace working_time_monitoring_management
 
     public class WorkingTime
     {
-        public static string workingtime;
+        public static string workingtime_;
         public static void showWorkingTime(string name, string surname)
         {
             List<TimeSpan> time_S = new List<TimeSpan>();
@@ -113,11 +113,11 @@ namespace working_time_monitoring_management
                 string[] count_convert = count_string.Split('.');
                 string[] count_convert2 = count_convert[1].Split(':');
                 string count_convert_string = ((int.Parse(count_convert[0]) * 24) + int.Parse(count_convert2[0])).ToString();
-                workingtime = ($"{count_convert_string}:{count_convert2[1]}:{count_convert2[2]}");
+                workingtime_ = ($"{count_convert_string}:{count_convert2[1]}:{count_convert2[2]}");
             }
             else
             {
-                workingtime = count.ToString();
+                workingtime_ = count.ToString();
             }
 
         }

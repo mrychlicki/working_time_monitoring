@@ -55,5 +55,11 @@ namespace working_time_monitoring_management
             Window4 show_all = new Window4();
             show_all.Show();
         }
+
+        private void show_working_time(object sender, RoutedEventArgs e)
+        {
+            Window5 working_wime = new Window5();
+            working_wime.Show();
+        }
     }
 }

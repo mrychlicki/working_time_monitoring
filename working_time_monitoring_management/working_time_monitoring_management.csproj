@@ -98,6 +98,9 @@
     <Compile Include="LIist_all_employee.xaml.cs">
       <DependentUpon>LIist_all_employee.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Working_time.xaml.cs">
+      <DependentUpon>Working_time.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WTMM_Class.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -116,6 +119,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="LIist_all_employee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Working_time.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

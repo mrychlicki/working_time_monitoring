@@ -12,6 +12,7 @@
         <Button Content="ZMIEŃ NUMER KARTY" HorizontalAlignment="Left" Margin="79,161,0,0" VerticalAlignment="Top" Width="182" RenderTransformOrigin="0.226,0.543" Click="edit_card_number"/>
         <Button Content="INFORMACJE O PRACOWNIKU" HorizontalAlignment="Left" Margin="79,201,0,0" VerticalAlignment="Top" Width="182" Click="employee_info"/>
         <Button Content="WYŚWIETL LISTĘ PRACOWNIKÓW" HorizontalAlignment="Left" Margin="79,242,0,0" VerticalAlignment="Top" Width="182" Click="show_all_employee"/>
+        <Button Content="CZAS PRACY PRACOWNIKÓW" HorizontalAlignment="Left" Margin="79,284,0,0" VerticalAlignment="Top" Width="182" Click="show_working_time"/>
 
     </Grid>
 </Window>
