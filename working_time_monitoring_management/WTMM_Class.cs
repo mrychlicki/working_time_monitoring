@@ -8,18 +8,27 @@ using System.Threading.Tasks;
 
 namespace working_time_monitoring_management
 {
-    
+    class Connect
+    {
+        private static string userid = "Administrator";
+        private static string password = "@dministrato";
+        private string adres = $@"server=localhost;userid={userid};password={password};database=db_working_time";
+        public string connect_adress()
+        {
+            return adres;
+        }
+    }
     public class AddToDatabase
     {
         public static void add(string name, string surname, int card_number)
         {
-            string cs = @"server=localhost;userid=Administrator;password=@dministrato;database=db_working_time";
-            var con = new MySqlConnection(cs);
-            con.Open();
-            var cmd = new MySqlCommand();
-            cmd.Connection = con;
-            cmd.CommandText = $"INSERT INTO employee(Name, Surname, Card_number) VALUES('{name}','{surname}', {card_number})";
-            cmd.ExecuteNonQuery();
+            Connect connect = new Connect();
+            var connection = new MySqlConnection(connect.connect_adress());
+            connection.Open();
+            var command = new MySqlCommand();
+            command.Connection = connection;
+            command.CommandText = $"INSERT INTO employee(Name, Surname, Card_number) VALUES('{name}','{surname}', {card_number})";
+            command.ExecuteNonQuery();
 
         }
     }
@@ -28,13 +37,13 @@ namespace working_time_monitoring_management
     {
         public static void change_card_number(string name, string surname, int new_card_number)
         {
-            string cs = @"server=localhost;userid=Administrator;password=@dministrato;database=db_working_time";
-            var con = new MySqlConnection(cs);
-            con.Open();
-            var cmd = new MySqlCommand();
-            cmd.Connection = con;
-            cmd.CommandText = $"UPDATE employee SET Card_number = {new_card_number} WHERE name like'{name}' and surname like '{surname}'";
-            cmd.ExecuteNonQuery();
+            Connect connect = new Connect();
+            var connection = new MySqlConnection(connect.connect_adress());
+            connection.Open();
+            var command = new MySqlCommand();
+            command.Connection = connection;
+            command.CommandText = $"UPDATE employee SET Card_number = {new_card_number} WHERE name like'{name}' and surname like '{surname}'";
+            command.ExecuteNonQuery();
 
         }
     }
@@ -45,15 +54,15 @@ namespace working_time_monitoring_management
         public static string surname_;
         public static void show(int card_number)
         {
-            string cs = @"server=localhost;userid=Administrator;password=@dministrato;database=db_working_time";
-            var con = new MySqlConnection(cs);
-            con.Open();
-            string sql2 = $"SELECT * FROM employee WHERE Card_number = {card_number}";
-            var cmd2 = new MySqlCommand(sql2, con);
-            var rdr_all = cmd2.ExecuteReader();
-            rdr_all.Read();
-            name_ = rdr_all.GetString(1).ToString();
-            surname_ = rdr_all.GetString(2).ToString();
+            Connect connect = new Connect();
+            var connection = new MySqlConnection(connect.connect_adress());
+            connection.Open();
+            string sql = $"SELECT * FROM employee WHERE Card_number = {card_number}";
+            var command = new MySqlCommand(sql, connection);
+            var read_all = command.ExecuteReader();
+            read_all.Read();
+            name_ = read_all.GetString(1).ToString();
+            surname_ = read_all.GetString(2).ToString();
            
         }
     }
@@ -63,18 +72,17 @@ namespace working_time_monitoring_management
 
         public static void showAll()
         {
-            string cs = @"server=localhost;userid=Administrator;password=@dministrato;database=db_working_time";
-            var con = new MySqlConnection(cs);
-            con.Open();
-            string sql2 = $"SELECT * FROM employee";
-            var cmd2 = new MySqlCommand(sql2, con);
-            cmd2.ExecuteNonQuery();
-
-            MySqlDataAdapter data = new MySqlDataAdapter(cmd2);
-            DataTable dt = new DataTable("employee");
-            data.Fill(dt);
-            defaultview_ = dt.DefaultView;
-            data.Update(dt);
+            Connect connect = new Connect();
+            var connection = new MySqlConnection(connect.connect_adress());
+            connection.Open();
+            string sql = $"SELECT * FROM employee";
+            var command = new MySqlCommand(sql, connection);
+            command.ExecuteNonQuery();
+            MySqlDataAdapter data = new MySqlDataAdapter(command);
+            DataTable dataTable = new DataTable("employee");
+            data.Fill(dataTable);
+            defaultview_ = dataTable.DefaultView;
+            data.Update(dataTable);
         }
     }
     
@@ -82,22 +90,22 @@ namespace working_time_monitoring_management
     public class WorkingTime
     {
         public static string workingtime_;
-        public static void showWorkingTime(string name, string surname)
+        public static void showWorkingTime(string name, string surname, int month)
         {
             List<TimeSpan> time_S = new List<TimeSpan>();
             List<TimeSpan> time_e = new List<TimeSpan>();
 
-            string cs = @"server=localhost;userid=Administrator;password=@dministrato;database=db_working_time";
-            var con = new MySqlConnection(cs);
-            con.Open();
-            string sql2 = $"SELECT * FROM time_monitoring as tm JOIN employee as e on tm.FK_ID=e.ID WHERE e.Surname LIKE '{surname}' and e.Name LIKE '{name}'";
-            var cmd2 = new MySqlCommand(sql2, con);
-            var rdr_all = cmd2.ExecuteReader();
+            Connect connect = new Connect();
+            var connection = new MySqlConnection(connect.connect_adress());
+            connection.Open();
+            string sql = $"SELECT * FROM time_monitoring as tm JOIN employee as e on tm.FK_ID=e.ID WHERE e.Name LIKE '{name}' and e.Surname LIKE '{surname}' and tm.date BETWEEN '2020-{month}-01' AND '2020-{month}-31' AND tm.time_end IS NOT NULL;";
+            var cmd2 = new MySqlCommand(sql, connection);
+            var read_all = cmd2.ExecuteReader();
 
-            while (rdr_all.Read())
+            while (read_all.Read())
             {
-                time_S.Add(rdr_all.GetTimeSpan(2));
-                time_e.Add(rdr_all.GetTimeSpan(3));
+                time_S.Add(read_all.GetTimeSpan(2));
+                time_e.Add(read_all.GetTimeSpan(3));
             }
 
             TimeSpan count = new TimeSpan();

@@ -11,9 +11,24 @@
         <TextBox HorizontalAlignment="Left" Height="23" Margin="162,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="wt_name"/>
         <Label Content="NAZWISKO" HorizontalAlignment="Left" Margin="42,80,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="162,83,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="wt_surname"/>
-        <Label Content="CZAS PRACY" HorizontalAlignment="Left" Margin="42,132,0,0" VerticalAlignment="Top"/>
-        <Label Content="" HorizontalAlignment="Left" Margin="162,132,0,0" VerticalAlignment="Top" Name="working_time_text"/>
-        <Button Content="POKAŻ" HorizontalAlignment="Left" Margin="143,211,0,0" VerticalAlignment="Top" Width="75" Click="wt_show"/>
+        <Label Content="CZAS PRACY" HorizontalAlignment="Left" Margin="42,187,0,0" VerticalAlignment="Top"/>
+        <Label Content="" HorizontalAlignment="Left" Margin="162,182,0,0" VerticalAlignment="Top" Name="working_time_text" FontSize="16"/>
+        <Label Content="Miesiąc" HorizontalAlignment="Left" Margin="42,125,0,0" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="162,129,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged" Name="wt_month">
+            <ComboBoxItem>Styczeń</ComboBoxItem>
+            <ComboBoxItem>Luty</ComboBoxItem>
+            <ComboBoxItem>Marzec</ComboBoxItem>
+            <ComboBoxItem>Kwiecień</ComboBoxItem>
+            <ComboBoxItem>Maj</ComboBoxItem>
+            <ComboBoxItem>Czerwiec</ComboBoxItem>
+            <ComboBoxItem>Lipiec</ComboBoxItem>
+            <ComboBoxItem>Sierpień</ComboBoxItem>
+            <ComboBoxItem>Wrzesień</ComboBoxItem>
+            <ComboBoxItem>Październik</ComboBoxItem>
+            <ComboBoxItem>Listopad</ComboBoxItem>
+            <ComboBoxItem>Grudzień</ComboBoxItem>
+        </ComboBox>
+        <Button Content="POKAŻ" HorizontalAlignment="Left" Margin="143,256,0,0" VerticalAlignment="Top" Width="75" Click="wt_show" RenderTransformOrigin="0.562,1.62"/>
 
     </Grid>
 </Window>

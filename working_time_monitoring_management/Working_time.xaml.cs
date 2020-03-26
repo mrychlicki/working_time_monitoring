@@ -28,8 +28,14 @@ namespace working_time_monitoring_management
         {
             string name = wt_name.Text;
             string surname = wt_surname.Text;
-            WorkingTime.showWorkingTime(name, surname);
+            int month = wt_month.SelectedIndex+1;
+            WorkingTime.showWorkingTime(name, surname, month);
             working_time_text.Content = WorkingTime.workingtime_;
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
